@@ -15,5 +15,6 @@ add_oiio_plugin (${openexr_src}
     LINK_LIBRARIES
         $<TARGET_NAME_IF_EXISTS:OpenEXR::OpenEXR>
         $<TARGET_NAME_IF_EXISTS:OpenEXR::OpenEXRCore>
-    DEFINITIONS ${openexr_defs}
+        ${OPENEXR_LIBRARIES}
+        DEFINITIONS ${openexr_defs}
     )
