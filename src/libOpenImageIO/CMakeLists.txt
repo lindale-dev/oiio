@@ -104,7 +104,10 @@ endif ()
 # Source groups for libutil and libtexture
 source_group ("libutil"    REGULAR_EXPRESSION ".+/libutil/.+")
 source_group ("libtexture" REGULAR_EXPRESSION ".+/libtexture/.+")
-
+message(STATUS "----------------------------- 0 ${IMATH_INCLUDES}")
+message(STATUS "----------------------------- 1 ${OPENEXR_INCLUDES}")
+message(STATUS "----------------------------- 3 $<INSTALL_INTERFACE:include>")
+message(STATUS "----------------------------- 3 $<BUILD_INTERFACE:include>")
 target_include_directories (OpenImageIO
                             PUBLIC
                                 $<INSTALL_INTERFACE:include>
