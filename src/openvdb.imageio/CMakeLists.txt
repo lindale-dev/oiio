@@ -2,9 +2,20 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # https://github.com/OpenImageIO/oiio
 
+
+message(STATUS "x----------------------------- 0 ${IMATH_INCLUDES}")
+message(STATUS "x----------------------------- 1 ${OPENEXR_INCLUDES}")
+message(STATUS "x----------------------------- 2 ${OPENVDB_INCLUDES}")
+message(STATUS "x----------------------------- 3 ${IMATH_INCLUDE_DIR}/OpenEXR")
+
 if (OpenVDB_FOUND)
     add_oiio_plugin (openvdbinput.cpp
-                     INCLUDE_DIRS ${OPENEXR_INCLUDES} ${IMATH_INCLUDES} ${OPENVDB_INCLUDES} ${TBB_INCLUDE_DIRS}
+                     INCLUDE_DIRS
+                        ${OPENEXR_INCLUDES}
+                        ${IMATH_INCLUDES}
+                        ${IMATH_INCLUDE_DIR}/OpenEXR
+                        ${OPENVDB_INCLUDES}
+                        ${TBB_INCLUDE_DIRS}
                      LINK_LIBRARIES ${OPENVDB_LIBRARIES}
                                     ${TBB_tbb_LIBRARY}
                                     $<TARGET_NAME_IF_EXISTS:TBB::tbb>
